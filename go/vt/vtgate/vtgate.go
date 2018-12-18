@@ -295,6 +295,11 @@ func (vtg *VTGate) Gateway() gateway.Gateway {
 	return vtg.gw
 }
 
+// Executor returns the executor. Used for the debug status UI
+func (vtg *VTGate) Executor() *Executor {
+	return vtg.executor
+}
+
 // L2VTGate returns the L2VTGate object. Mostly used for tests.
 func (vtg *VTGate) L2VTGate() *L2VTGate {
 	return vtg.l2vtgate
