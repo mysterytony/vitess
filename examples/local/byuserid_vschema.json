@@ -1,0 +1,26 @@
+{
+  "sharded": true,
+  "vindexes": {
+    "hash": {
+      "type": "hash"
+    }
+  },
+  "tables": {
+    "users": {
+      "column_vindexes": [
+        {
+          "column": "userid",
+          "name": "hash"
+        }
+      ]
+    },
+    "files": {
+      "column_vindexes": [
+        {
+          "column": "userid",
+          "name": "hash"
+        }
+      ]
+    }
+  }
+}

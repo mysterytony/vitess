@@ -55,7 +55,7 @@ mkdir -p $VTDATAROOT/backups
 
 # Start 5 vttablets by default.
 # Pass TABLETS_UIDS indices as env variable to change
-uids=${TABLETS_UIDS:-'0 1 2 3 4'}
+uids=${TABLETS_UIDS:-'0 1 2 3'}
 
 # Start all mysqlds in background.
 for uid_index in $uids; do
@@ -95,8 +95,8 @@ for uid_index in $uids; do
   grpc_port=$[$grpc_port_base + $uid_index]
   printf -v alias '%s-%010d' $cell $uid
   printf -v tablet_dir 'vt_%010d' $uid
-  tablet_type=replica
-  if [[ $uid_index -gt 2 ]]; then
+  tablet_type=replica 
+  if [[ $uid_index -gt 3 ]]; then
     tablet_type=rdonly
   fi
 
